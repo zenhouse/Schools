@@ -56,9 +56,8 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Configure the cell...
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NYCCell", for: indexPath)
-        let text = self.schools[indexPath.row].schoolName
-        cell.textLabel?.text = text
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NYCCell", for: indexPath) as! TableViewCell
+        cell.configure(school: self.schools[indexPath.row])
         return cell
     }
     
